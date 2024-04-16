@@ -31,6 +31,7 @@ class DiscountControllerTest(@Autowired
         mockMvc.perform(MockMvcRequestBuilders.post("/net-payable")
                 .content("{\"totalAmount\": 200, \"isGroceries\": false, \"userType\":  \"EMPLOYEE\"}")
                 .contentType(MediaType.APPLICATION_JSON))
+                
                 .andExpect(MockMvcResultMatchers.status().isOk)
                 .andExpect(MockMvcResultMatchers.content().string("{\"netPayableAmount\":130.0}"))
     }
